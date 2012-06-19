@@ -213,7 +213,18 @@ class NmeaParser {
     }
 
     private function GPAPA($geostr) {
-//Not yet implemented.
+        $split = explode(",", $geostr);
+        $this->Nmea['type'] = $split[0];
+        $this->Nmea['lcb'] = $split[1];
+        $this->Nmea['lcc'] = $split[2];
+        $this->Nmea['xtrkerr'] = $split[3];
+        $this->Nmea['lrcorrect'] = $split[4];
+        $this->Nmea['ctu'] = $split[5];
+        $this->Nmea['ace'] = $split[6];
+        $this->Nmea['ppw'] = $split[7];
+        $this->Nmea['bod'] = $split[8];
+        $this->Nmea['mt'] = $split[9];
+        $this->Nmea['dwi'] = $split[10];
     }
 
     private function GPAPB($geostr) {
@@ -520,4 +531,5 @@ class NmeaParser {
     }
 
 }
+
 ?>
