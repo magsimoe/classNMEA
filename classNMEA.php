@@ -303,7 +303,22 @@ class NmeaParser {
     }
 
     private function GPGRS($geostr) {
-//Not yet implemented.
+        $split = explode(",", $geostr);
+        $this->Nmea['type'] = $split[0];
+        $this->Nmea['time'] = $split[1];
+        $this->Nmea['gga'] = $split[2];
+        $this->Nmea['sat1'] = $split[3];
+        $this->Nmea['sat2'] = $split[4];
+        $this->Nmea['sat3'] = $split[5];
+        $this->Nmea['sat4'] = $split[6];
+        $this->Nmea['sat5'] = $split[7];
+        $this->Nmea['sat6'] = $split[8];
+        $this->Nmea['sat7'] = $split[9];
+        $this->Nmea['sat8'] = $split[10];
+        $this->Nmea['sat9'] = $split[11];
+        $this->Nmea['sat10'] = $split[12];
+        $this->Nmea['sat11'] = $split[13];
+        $this->Nmea['sat12'] = $split[14];
     }
 
     private function GPGSA($geostr) {
@@ -329,7 +344,16 @@ class NmeaParser {
     }
 
     private function GPGST($geostr) {
-//Not yet implemented
+        $split = explode(",", $geostr);
+        $this->Nmea['type'] = $split[0];
+        $this->Nmea['time'] = $split[1];
+        $this->Nmea['tot'] = $split[2];
+        $this->Nmea['dev1'] = $split[3];
+        $this->Nmea['dev2'] = $split[4];
+        $this->Nmea['ori'] = $split[5];
+        $this->Nmea['dev3'] = $split[6];
+        $this->Nmea['dev4'] = $split[7];
+        $this->Nmea['dev5'] = $split[8];
     }
 
     private function GPGSV($geostr) {
